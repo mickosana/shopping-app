@@ -1,0 +1,16 @@
+const sequelize=require("sequelize");
+
+    const dbconnect=new sequelize('your_database_name', 'your_db_username' ,'password',{
+        host:'hostname',
+        dialect:'mysql',
+        pool:{
+            max:5,
+            min:0,
+            acquire:3000,
+            idle:10000
+        },
+        define:{engine:'InnoDB'}
+    })
+
+
+module.exports=dbconnect
